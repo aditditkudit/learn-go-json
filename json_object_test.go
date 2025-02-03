@@ -1,0 +1,24 @@
+package learn_go_json
+
+import (
+	"encoding/json"
+	"fmt"
+	"testing"
+)
+
+type Customer struct {
+	FirstName string
+	LastName  string
+	Age       int
+}
+
+func TestJsonObject(t *testing.T) {
+	customer := Customer{
+		FirstName: "John",
+		LastName:  "Doe",
+		Age:       25,
+	}
+
+	bytes, _ := json.Marshal(customer)
+	fmt.Println(string(bytes))
+}
